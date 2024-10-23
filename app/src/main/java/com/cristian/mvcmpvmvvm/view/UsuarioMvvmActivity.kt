@@ -12,11 +12,12 @@ import com.cristian.mvcmpvmvvm.viewmodel.UsuarioViewModel
 
 class UsuarioMvvmActivity : AppCompatActivity() {
 
-    private val binding by lazy { ActivityUsuarioMvvmBinding.inflate(layoutInflater) }
+    private lateinit var binding: ActivityUsuarioMvvmBinding
     private lateinit var usuarioViewModel: UsuarioViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityUsuarioMvvmBinding.inflate(layoutInflater)
         setContentView(binding.root)
         usuarioViewModel = ViewModelProvider(this)[UsuarioViewModel::class.java]
 
